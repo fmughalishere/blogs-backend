@@ -19,6 +19,5 @@ router.post("/", createBlog);
 router.get("/:id", getAdminBlogById);
 router.put("/:id", updateBlog);
 router.delete("/:id", deleteBlog);
-router.post("/admin/upload", protect, adminOnly, upload.single("image"), uploadImage);
-
+router.post("/upload", upload.single("image"), uploadImage);
 export default router;
