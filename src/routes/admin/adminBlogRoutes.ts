@@ -7,6 +7,8 @@ import {
   deleteBlog,
 } from "../../controllers/blogController";
 import { protect, adminOnly } from "../../middleware/auth";
+import upload from "../../middleware/upload";
+import { uploadImage } from "../../controllers/uploadController";
 
 const router = Router();
 
@@ -17,5 +19,6 @@ router.post("/", createBlog);
 router.get("/:id", getAdminBlogById);
 router.put("/:id", updateBlog);
 router.delete("/:id", deleteBlog);
+router.post("/admin/upload", protect, adminOnly, upload.single("image"), uploadImage);
 
 export default router;
