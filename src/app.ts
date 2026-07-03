@@ -11,7 +11,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://blogs-frontend-admin.vercel.app",
-      "http://medical-blog-frontend.vercel.app",
+      "https://medical-blog-frontend.vercel.app",
     ],
     credentials: true,
   })
